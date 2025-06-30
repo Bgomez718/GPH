@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {IBM_Plex_Sans} from 'next/font/google'
+import SideNav from "./components/dashboard/SideNav/SideNav";
 
+
+const plex_sans = IBM_Plex_Sans({weight:"500"});
 
 export const metadata: Metadata = {
   title: "Gomez Private Housing",
@@ -14,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      
+      <body className={plex_sans.className}>
+        <SideNav></SideNav>
         {children}
       </body>
     </html>
